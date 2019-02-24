@@ -1,0 +1,12 @@
+plugins {
+  id "com.moowork.node" version "1.2.0"
+}
+
+task checkAndInstallDependencies(type: YarnTask) {
+  args = []
+}
+
+task runBuild(type: YarnTask) {
+  args = ['run', 'build']
+}
+runBuild.dependsOn checkAndInstallDependencies
